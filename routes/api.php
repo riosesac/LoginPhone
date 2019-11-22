@@ -18,6 +18,7 @@ Route::group(['middleware' => ['auth:kontak']], function () {
     Route::match(['get', 'post'], '/register', 'Api\UserController@register');
     Route::group(['middleware' => ['auth:api']], function () {
         Route::match(['get', 'post'], '/details', 'Api\UserController@details');
+        Route::match(['get', 'post'], '/logout', 'Api\OutController@logout');
     });
 });
 
